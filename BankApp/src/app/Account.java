@@ -14,9 +14,7 @@ public abstract class Account implements IBaseRate{
 		this.name = name;
 		this.sSN = sSN;
 		balance = initDeposit;
-		
-		System.out.println("NAME: " + name + " SSN: " + sSN + " BALANCE: $" + balance);
-		
+				
 		index++;
 		this.accountNumber = setAccountNumber();
 	}
@@ -26,5 +24,13 @@ public abstract class Account implements IBaseRate{
 		int uniqueID = index;
 		int randomNumber = (int)(Math.random() * Math.pow(10, 3));
 		return lastTwoOfSSN + uniqueID + randomNumber;
+	}
+	
+	public void showInfo() {
+		System.out.println(
+				"NAME: " + name + 
+				"\nACCOUNT NUMBER: " + accountNumber +
+				"\nBALANCE: " + balance
+				);
 	}
 }
