@@ -31,6 +31,8 @@ public class BankAccountApp {
 			acc.showInfo();
 			System.out.println("*****************");
 		}
+		
+		//accounts.get((int)Math.random() * accounts.size()).deposit(1000);
 	}
 
 }
