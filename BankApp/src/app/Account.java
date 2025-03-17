@@ -58,6 +58,13 @@ public abstract class Account implements IBaseRate{
 	}
 	
 	public void printBalance() {
-		System.out.println("Your balance is now: " + balance);
+		System.out.println("Your balance is now: $" + balance);
+	}
+	
+	public void compound() {
+		double accruedInterested = balance * (rate/100);
+		balance += accruedInterested;
+		System.out.println("Accrued Interest: $" + accruedInterested);
+		printBalance();
 	}
 }
