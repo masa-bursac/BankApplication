@@ -24,4 +24,9 @@ public class Savings extends Account {
 		safetyDepositBoxID = (int)(Math.random() * Math.pow(10, 3));
 		safetyDepositBoxKey = (int)(Math.random() * Math.pow(10, 4));
 	}
+
+	@Override
+	public void setRate() {
+		rate = getBaseRate() - 0.25;
+	}
 }
