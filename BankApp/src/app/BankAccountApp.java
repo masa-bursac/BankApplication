@@ -1,21 +1,21 @@
 package app;
 
+import java.util.List;
+
 public class BankAccountApp {
 
 	public static void main(String[] args) {
+		String file = "C:\\Users\\masa\\eclipse-workspace\\BankApplication\\BankApplication\\NewBankAccounts.csv";
+			
+		List<String[]> newAccountHolders = utilities.CSV.read(file);
 		
-		Checking chkacc1 = new Checking("Tom Wilson", "123456789", 1500);
-		
-		Savings savacc1 = new Savings("Rick Lowe", "456789123", 2500);
-		
-		savacc1.compound();
-		
-		savacc1.showInfo();
-		System.out.println("***************");
-		chkacc1.showInfo();
-		System.out.println("***************");
-		
-
+		for (String[] accountHolder: newAccountHolders) {
+			System.out.println("NEW ACCOUNT");
+			System.out.println(accountHolder[0]);
+			System.out.println(accountHolder[1]);
+			System.out.println(accountHolder[2]);
+			System.out.println(accountHolder[3]);
+		}
 	}
 
 }
