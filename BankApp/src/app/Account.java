@@ -2,13 +2,13 @@ package app;
 
 public abstract class Account implements IBaseRate{
 	
-	String name;
-	String sSN;
-	double balance;
+	private String name;
+	private String sSN;
+	private double balance;
 	
-	static int index = 10000;
-	String accountNumber;
-	double rate;
+	private static int index = 10000;
+	protected String accountNumber;
+	protected double rate;
 
 	public Account(String name, String sSN, double initDeposit) {
 		this.name = name;
@@ -28,6 +28,8 @@ public abstract class Account implements IBaseRate{
 		return lastTwoOfSSN + uniqueID + randomNumber;
 	}
 	
+	public abstract void setRate();
+	
 	public void showInfo() {
 		System.out.println(
 				"NAME: " + name + 
@@ -36,8 +38,6 @@ public abstract class Account implements IBaseRate{
 				"\nRATE: " + rate + "%"
 				);
 	}
-	
-	public abstract void setRate();
 	
 	public void deposit(double amount) {
 		balance += amount;
